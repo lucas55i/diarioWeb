@@ -1,5 +1,6 @@
 import { AxiosInstance } from "axios";
 import { buildHttpClient } from "../common/http-client";
+import { User } from "../models/user.model";
 
 class UserService {
     private httpClient: AxiosInstance;
@@ -8,7 +9,9 @@ class UserService {
         this.httpClient = buildHttpClient(apiUrl)
     }
 
-    async consultarUsuarios() { }
+    async consultarUsuarios(): Promise<User[]> {
+        return await this.httpClient.get("/users");
+    }
 
     async consultarUsuarioPeloId() { }
 
