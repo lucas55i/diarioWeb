@@ -1,4 +1,7 @@
 export default {
+  env: {
+    usersApi: 'http://localhost:3001/api/v1/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'diarioWeb',
