@@ -17,7 +17,7 @@ const buildHttpClient = (baseUrl: string): AxiosInstance => {
   return httpClient;
 };
 
-const baseURL = process.env.usersApi as string;
+const baseURL = process.env.diarioApi as string;
 const client = buildHttpClient(baseURL);
 export default client;
 
