@@ -1,6 +1,6 @@
 import { AxiosInstance } from "axios";
 import { buildHttpClient } from "../common/http-client";
-import { Post } from "../models/post.model";
+import { AddPost, Post } from "../models/post.model";
 
 class PostService {
     private httpClient: AxiosInstance;
@@ -13,7 +13,9 @@ class PostService {
         return await this.httpClient.get("/posts");
      }
 
-    async criarPosts() { }
+    async criarPosts(post: AddPost) {
+        return await this.httpClient.post("/posts", post)
+     }
 }
 
 const postService = new PostService();
