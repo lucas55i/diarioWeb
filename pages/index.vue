@@ -17,17 +17,10 @@ export default Vue.extend({
     return {}
   },
   computed: {
-    users(): any {
-      return this.$store.state.user.users as User;
-    },
+    
   },
   methods: {
-    getUsers() {
-      this.$store.dispatch("user/consultarUsuarios");
-    },
-  },
-  created() {
-    this.getUsers();
+   
   },
 });;
 </script>
