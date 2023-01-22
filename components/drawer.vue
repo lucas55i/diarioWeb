@@ -13,15 +13,8 @@
         <c-drawer-header>Crie Seu Post</c-drawer-header>
 
         <c-drawer-body>
-          <addUser />
+          <addUser @postCriado ="getPosts()" @closeDrawer="close()" />
         </c-drawer-body>
-
-        <c-drawer-footer>
-          <c-button variant="outline" mr="3" @click="isOpen = false"
-            >Cancelar</c-button
-          >
-          <c-button variant-color="blue">Publicar Post</c-button>
-        </c-drawer-footer>
       </c-drawer-content>
     </c-drawer>
     <CDivider />
@@ -31,6 +24,7 @@
         <c-heading>{{user.author}}</c-heading>
         <c-text :mt="4">{{user.conteudo}}</c-text>
       </c-box>
+      <br>
     </c-stack>
   </div>
 </template>
