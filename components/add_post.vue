@@ -5,6 +5,7 @@
               <c-box>
                 <c-form-label for="username">Nome</c-form-label>
                 <c-input
+                v-model="post.author"
                   ref="firstField"
                   id="username"
                   placeholder="Digite seu nome"
@@ -13,7 +14,7 @@
 
               <c-box>
                 <c-form-label for="desc">Conteúdo do Post</c-form-label>
-                <c-textarea id="desc" />
+                <c-textarea id="desc" v-model="post.conteudo"/>
               </c-box>
           </c-stack>
           <c-drawer-footer>
@@ -26,6 +27,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { AddPost } from "~/core/models/post.model";
 
 export default Vue.extend({
   components: {
@@ -33,7 +35,11 @@ export default Vue.extend({
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      post: {
+        author: "",
+        conteudo: ""
+      } as AddPost
     }
   },
   computed: {
