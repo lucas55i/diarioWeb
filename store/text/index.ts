@@ -29,7 +29,7 @@ export const actions = {
                 console.log('Error :>> ', err);
             }).finally(() => {
                 console.log("-------");
-                console.log('CHAMA ENCERRADA');
+                console.log('CHAMADA ENCERRADA');
                 console.log("-------");
             })
         })
@@ -50,7 +50,7 @@ export const actions = {
               })
               .finally(() => {
                 console.log("-------");
-                console.log('CHAMA ENCERRADA');
+                console.log('CHAMADA ENCERRADA');
                 console.log("-------");
               })
           })
