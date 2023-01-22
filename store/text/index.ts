@@ -1,4 +1,5 @@
-import { Post } from "~/core/models/post.model";
+import { CLightMode } from "@chakra-ui/vue";
+import { AddPost, Post } from "~/core/models/post.model";
 import { postService } from "~/core/services/posts-service";
 
 interface PostState {
@@ -32,5 +33,26 @@ export const actions = {
                 console.log("-------");
             })
         })
+    },
+
+
+    criarPost(contex: any, AddPost: AddPost){
+        return new Promise((resolve, reject) => {
+      
+            postService
+              .criarPosts(AddPost)
+              .then((post) => {
+                resolve(post)
+              })
+              .catch((err) => {
+                reject(err)
+                console.log(err)
+              })
+              .finally(() => {
+                console.log("-------");
+                console.log('CHAMA ENCERRADA');
+                console.log("-------");
+              })
+          })
     }
 }
