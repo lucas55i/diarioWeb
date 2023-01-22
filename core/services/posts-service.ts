@@ -1,5 +1,6 @@
 import { AxiosInstance } from "axios";
 import { buildHttpClient } from "../common/http-client";
+import { Post } from "../models/post.model";
 
 class PostService {
     private httpClient: AxiosInstance;
@@ -8,7 +9,9 @@ class PostService {
         this.httpClient = buildHttpClient(apiUrl)
     }
 
-    async ConsultarPost() { }
+    async consultarPosts(): Promise<Post[]> {
+        return await this.httpClient.get("/posts");
+     }
 
     async criarPosts() { }
 }
