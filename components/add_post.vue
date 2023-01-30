@@ -49,11 +49,11 @@ export default Vue.extend({
       const addPost = { ...this.post };
       await this.$store.dispatch("text/criarPost", addPost);
       this.$emit('postCriado')
-      this.$emit('closeDrawer')
+      
     },
 
     close() {
-      this.isOpen = true;
+      this.$emit('closeDrawer')
     },
   },
 });

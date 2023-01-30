@@ -21,7 +21,7 @@
 
     <c-stack :spacing="5"  v-for="user in posts">
       <c-box :p="5" shadow="md" border-width="1px">
-        <c-heading>{{user.author}}</c-heading>
+        <c-text><strong>Autor: </strong> {{user.author}}</c-text>
         <c-text :mt="4">{{user.conteudo}}</c-text>
       </c-box>
       <br>
