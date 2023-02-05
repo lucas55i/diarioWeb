@@ -45,6 +45,7 @@ export default Vue.extend({
       } else {
         await this.$store.dispatch("text/criarPost", addPost);
         this.$emit('postCriado')
+        this.$emit('closeDrawer')
       }
 
     },
