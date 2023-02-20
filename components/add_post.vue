@@ -4,16 +4,16 @@
       <c-stack spacing="24px">
         <c-box>
           <c-form-label for="username">Nome</c-form-label>
-          <c-input type="text" v-model="post.author" id="username" placeholder="Digite seu nome" />
+          <c-input type="text" v-model="post.author" id="author" placeholder="Digite seu nome" />
         </c-box>
 
         <c-box>
           <c-form-label for="desc">Conteúdo do Post</c-form-label>
-          <c-textarea aria-required="true" id="desc" v-model="post.conteudo" />
+          <c-textarea aria-required="true" id="conteudo" v-model="post.conteudo" />
         </c-box>
       </c-stack>
       <c-drawer-footer>
-        <c-button variant="outline" mr="3" @click="close()">Cancelar</c-button>
+        <c-button variant="outline"  @click="close()">Cancelar</c-button>
         <c-button variant-color="blue" @click="criarPost()">Publicar Post</c-button>
       </c-drawer-footer>
     </c-form-control>

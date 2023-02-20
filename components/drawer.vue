@@ -1,6 +1,6 @@
 <template>
   <div class="contianer">
-    <c-button ref="btnRef" @click="isOpen = true">Criar Post</c-button>
+    <c-button ref="btnRef" variant-color="blue" @click="isOpen = true">Criar Post</c-button>
     <c-drawer
       :isOpen="isOpen"
       placement="left"
