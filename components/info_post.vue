@@ -1,5 +1,5 @@
 <template>
-    <div class="contianer">
+    <div class="card-post">
         <c-stack :spacing="5" v-for="user in posts">
             <c-box :p="5" shadow="md" border-width="1px">
                 <c-text><strong>Autor: </strong> {{ user.author }}</c-text>
@@ -35,5 +35,15 @@ export default Vue.extend({
     },
 });
 </script>
-<style></style>
+<style>
+.card-post{
+    background-color: #444;
+    margin: 8px 0;
+    padding: 15px 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    color: #eee;
+    align-items: center;
+}
+</style>
   
