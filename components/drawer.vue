@@ -5,18 +5,16 @@
       <c-drawer-overlay />
       <c-drawer-content>
         <c-drawer-close-button />
-        <c-drawer-header>Crie Seu Post</c-drawer-header>
+        <c-drawer-header class="drawer-header">Crie Seu Post</c-drawer-header>
 
-        <c-drawer-body>
+        <c-drawer-body class="drawer">
           <addUser @postCriado="getPosts()" @closeDrawer="close()" />
         </c-drawer-body>
       </c-drawer-content>
-
     </c-drawer>
     <CDivider />
-
     <infoPost />
-</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -54,5 +52,14 @@ export default Vue.extend({
 .container {
   padding-top: 20px;
   padding-left: 20px;
+}
+
+.drawer-header {
+  background-color: #444;
+  color: #eee;
+}
+
+.drawer {
+  background-color: #444;
 }
 </style>
