@@ -30,9 +30,6 @@ export default Vue.extend({
             this.$store.dispatch("text/consultarPosts");
         },
     },
-    created() {
-        this.getPosts();
-    },
 });
 </script>
 <style>
@@ -46,4 +43,4 @@ export default Vue.extend({
     align-items: center;
 }
 </style>
-  
+   

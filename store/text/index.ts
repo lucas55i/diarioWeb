@@ -11,48 +11,43 @@ export const state = (): PostState => ({
 })
 
 export const mutations = {
-    setUser(state: PostState, posts: Array<Post>){
+    setUser(state: PostState, posts: Array<Post>) {
         state.posts = posts;
     },
 }
 
 export const actions = {
-    consultarPosts(contex: any){
+    consultarPosts(contex: any) {
         return new Promise<void>((resolve, reject) => {
             contex.commit("setUser", [])
 
             postService.consultarPosts().then((result) => {
                 resolve();
                 contex.commit("setUser", result)
-            }).catch((err) =>  {
+            }).catch((err) => {
                 reject(err)
                 console.log('Error :>> ', err);
             }).finally(() => {
-                console.log("-------");
-                console.log('CHAMADA ENCERRADA');
-                console.log("-------");
+
             })
         })
     },
 
 
-    criarPost(contex: any, AddPost: AddPost){
+    criarPost(contex: any, AddPost: AddPost) {
         return new Promise((resolve, reject) => {
-      
             postService
-              .criarPosts(AddPost)
-              .then((post) => {
-                resolve(post)
-              })
-              .catch((err) => {
-                reject(err)
-                console.log(err)
-              })
-              .finally(() => {
-                console.log("-------");
-                console.log('CHAMADA ENCERRADA');
-                console.log("-------");
-              })
-          })
+                .criarPosts(AddPost)
+                .then((post) => {
+                    resolve(post)
+                })
+                .catch((err) => {
+                    reject(err)
+                    console.log(err)
+                })
+                .finally(() => {
+
+                })
+        })
     }
 }
